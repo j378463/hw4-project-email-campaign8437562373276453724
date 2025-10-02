@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSUN HW4 Campus Newsletter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; }
+
+        /* RESET STYLES */
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        table { border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* GMAIL BLUE LINKS */
+        u + #body a {
+            color: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+
+        /* SAMSUNG MAIL BLUE LINKS */
+        #MessageViewBody a {
+            color: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+
+        /* RESPONSIVE STYLES */
+        @media screen and (max-width: 600px) {
+            .two-column td, .three-column td {
+                display: block !important;
+                width: 100% !important;
+                padding: 10px 0 !important;
+            }
+            .hidden-section { display: none !important; }
+        }
+
+        /* BUTTON ANIMATION */
+        @keyframes colorShift {
+            0% { background-color: #d9232e; }
+            50% { background-color: #b71c1c; }
+            100% { background-color: #d9232e; }
+        }
+
+        /* INTERACTIVITY */
+        a.button:hover { background-color: #b71c1c !important; }
+        a.link:hover { text-decoration: underline !important; color: #d9232e !important; }
+
+        /* CHECKBOX TECHNIQUE */
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + label + .hidden-section { display: block !important; }
+        .hidden-section { display: none; }
+    </style>
+</head>
+<body id="body" style="margin: 0 !important; padding: 0 !important; background-color: #f4f4f4; font-family: Arial, sans-serif;">
+<!-- Main table container -->
+<table role="presentation" width="100%" style="background-color: #f4f4f4;">
+    <tr>
+        <td align="center">
+            <table role="presentation" width="600" style="background-color: #ffffff; margin: 20px auto;">
+                <!-- Logo image -->
+                <tr>
+                    <td style="text-align: center; padding: 10px 0;">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/CSUNS.svg/1200px-CSUNS.svg.png   " alt="CSUN Logo" style="max-width: 186px; height: auto;">
+                    </td>
+                </tr>
+
+                <!-- Headline -->
+                <tr>
+                    <td style="text-align: center; padding: 20px 0;">
+                        <h1 style="font-size: 26px; color: #333333; margin: 0;">Discover CSUN Campus Life!</h1>
+                    </td>
+                </tr>
+
+                <!-- Hero Image -->
+                <tr>
+                    <td style="text-align: center; padding: 10px 0;">
+                        <img src="images/Screenshot4.jpg" alt="CSUN Campus" style="max-width: 100%; height: auto;">
+                    </td>
+                </tr>
+
+                <!-- Two-Column Component -->
+                <tr>
+                    <td style="padding: 20px;">
+                        <table role="presentation" width="100%">
+                            <tr class="two-column">
+                                <td style="width: 50%; padding: 0 10px; vertical-align: top;">
+                                    <h2 style="font-size: 22px; color: #333333; margin-top: 0;">Campus Events</h2>
+                                    <p style="font-size: 16px; color: #555555; line-height: 1.5;">
+                                        Join us for the CSUN Fall Festival on October 15, featuring live music, food trucks, and student performances at the University Student Union.
+                                    </p>
+                                </td>
+                                <td style="width: 50%; padding: 0 10px; vertical-align: top;">
+                                    <h2 style="font-size: 22px; color: #333333; margin-top: 0;">Student Clubs</h2>
+                                    <p style="font-size: 16px; color: #555555; line-height: 1.5;">
+                                        Explore over 300 student organizations, from the Computer Science Club to the CSUN Salsa Club, and find your community.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Three-Column Component with Background Image -->
+                <tr>
+                    <td style="padding: 20px; background-image: url('https://www.csun.edu/sites/default/files/field/image/oviatthero.jpg'); background-size: cover; background-position: center;">
+                        <table role="presentation" width="100%">
+                            <tr class="three-column">
+                                <td style="width: 33.33%; padding: 0 10px; vertical-align: top;">
+                                    <h3 style="font-size: 18px; color: #333333; margin-top: 0;">Dining Options</h3>
+                                    <p style="font-size: 14px; color: #555555; line-height: 1.5;">
+                                        Enjoy fresh meals at the Matador Mercado or grab coffee at the Freudian Sip.
+                                    </p>
+                                </td>
+                                <td style="width: 33.33%; padding: 0 10px; vertical-align: top;">
+                                    <h3 style="font-size: 18px; color: #333333; margin-top: 0;">Oviatt Library</h3>
+                                    <p style="font-size: 14px; color: #555555; line-height: 1.5;">
+                                        Study in the newly renovated Oviatt Library with 24/7 access during finals.
+                                    </p>
+                                </td>
+                                <td style="width: 33.33%; padding: 0 10px; vertical-align: top;">
+                                    <h3 style="font-size: 18px; color: #333333; margin-top: 0;">Recreation</h3>
+                                    <p style="font-size: 14px; color: #555555; line-height: 1.5;">
+                                        Stay active at the Student Recreation Center with yoga classes and climbing walls.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Buttons with Animation -->
+                <tr>
+                    <td style="text-align: center; padding: 20px;">
+                        <a href="https://www.csun.edu/usu/events" class="button" style="background-color: #d9232e; color: #ffffff; padding: 15px 30px; margin: 10px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block; animation: colorShift 3s infinite;">View Campus Events</a>
+                        <a href="https://www.csun.edu/studentaffairs" class="button" style="background-color: #333333; color: #ffffff; padding: 15px 30px; margin: 10px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block; animation: colorShift 3s infinite;">Join a Club</a>
+                    </td>
+                </tr>
+
+                <!-- Checkbox Technique with Radio Buttons -->
+                <tr>
+                    <td style="text-align: center; padding: 20px;">
+                        <input type="radio" id="show-details" name="toggle" checked>
+                        <label for="show-details" style="font-size: 16px; color: #333333; cursor: pointer;">Show Event Details</label>
+                        <div class="hidden-section" style="padding: 10px; background-color: #f0f0f0;">
+                            <p style="font-size: 14px; color: #555555; margin: 0;">
+                                Fall Festival: October 15, 4–8 PM, USU Plaza. <a href="https://www.csun.edu/usu/events" class="link" style="color: #d9232e; text-decoration: none;">Learn More</a>
+                            </p>
+                        </div>
+                        <input type="radio" id="hide-details" name="toggle">
+                        <label for="hide-details" style="font-size: 16px; color: #333333; cursor: pointer;">Hide Event Details</label>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td style="text-align: center; padding: 20px; font-size: 12px; color: #777777;">
+                        <p>Created by [Your Name] for CSUN Comp584 HW4, October 2025</p>
+                        <p><a href="#" style="color: #777777; text-decoration: underline;">Unsubscribe</a> | CSUN, 18111 Nordhoff St, Northridge, CA 91330</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
