@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <title>CSUN HW4 Campus Newsletter</title>
+    <!-- Critical for preventing garbled text in Outlook and other clients -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Allows fluid scaling on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Prevents IE from entering compatibility mode -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <style type="text/css">
         /* CLIENT-SPECIFIC STYLES */
@@ -82,13 +85,16 @@
 </head>
 <body id="body" style="margin: 0 !important; padding: 0 !important; background-color: #f4f4f4; font-family: Arial, sans-serif;">
 <!-- Main table container -->
+<!-- Full-width wrapper ensures centered content even in wide screens -->
 <table role="presentation" width="100%" style="background-color: #f4f4f4;">
     <tr>
         <td align="center">
+            <!-- Fixed 600px inner table matches most inbox widths -->
             <table role="presentation" width="600" style="background-color: #ffffff; margin: 20px auto;">
                 <!-- Logo image -->
                 <tr>
                     <td style="text-align: center; padding: 10px 0;">
+                        <!-- Official CSUN logo scaled to fit branding guidelines -->
                         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/CSUNS.svg/1200px-CSUNS.svg.png" alt="CSUN Logo" style="max-width: 186px; height: auto;">
                     </td>
                 </tr>
@@ -103,12 +109,14 @@
                 <!-- Hero Image -->
                 <tr>
                     <td style="text-align: center; padding: 10px 0;">
+                        <!-- Local image path — use absolute URL in real campaigns -->
                         <img src="images/Screenshot4.jpg" alt="CSUN Campus" style="max-width: 100%; height: auto;">
                     </td>
                 </tr>
 
                 <!-- Two-Column Component -->
                 <tr>
+                    <!-- CSUN red background creates strong visual section -->
                     <td style="padding: 20px; background-color: #C8102E;">
                         <table role="presentation" width="100%">
                             <tr class="two-column">
@@ -131,6 +139,7 @@
 
                 <!-- Three-Column Component with Background Image -->
                 <tr>
+                    <!-- Hero background from CSUN site; VML fallback needed for Outlook -->
                     <td style="padding: 20px; background-image: url('https://www.csun.edu/sites/default/files/field/image/oviatthero.jpg'); background-size: cover; background-position: center;">
                         <table role="presentation" width="100%">
                             <tr class="three-column">
@@ -159,6 +168,7 @@
 
                 <!-- Buttons with Animation -->
                 <tr>
+                    <!-- Keyframes create subtle pulsing effect on hover and load -->
                     <td style="text-align: center; padding: 20px;">
                         <a href="https://www.csun.edu/usu/events" class="button" style="background-color: #C8102E; color: #FFFFFF; padding: 15px 30px; margin: 10px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block; animation: colorShift 3s infinite;">View Campus Events</a>
                         <a href="https://www.csun.edu/studentaffairs" class="button" style="background-color: #333333; color: #FFFFFF; padding: 15px 30px; margin: 10px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block; animation: colorShift 3s infinite;">Join a Club</a>
@@ -167,6 +177,7 @@
 
                 <!-- Checkbox Technique with Radio Buttons -->
                 <tr>
+                    <!-- Pure CSS toggle using :checked and sibling selectors (no JS needed) -->
                     <td style="text-align: center; padding: 20px; background-color: #C8102E;">
                         <input type="radio" id="show-details" name="toggle">
                         <label id="show-details-label" for="show-details" style="font-size: 16px; color: #FFFFFF; cursor: pointer;">Show Event Details <span class="arrow">&gt;</span></label>
@@ -182,6 +193,7 @@
 
                 <!-- Footer -->
                 <tr>
+                    <!-- Small text meets legal footer requirements -->
                     <td style="text-align: center; padding: 20px; font-size: 12px; color: #777777;">
                         <p>Created for HW4, October 2025</p>
                         <p><a href="#" style="color: #777777; text-decoration: underline;">Unsubscribe</a> | CSUN, 18111 Nordhoff St, Northridge, CA 91330</p>
@@ -193,4 +205,5 @@
 </table>
 </body>
 </html>
+
 
