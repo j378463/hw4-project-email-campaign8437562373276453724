@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <title>CSUN HW4 Campus Newsletter</title>
-    <!-- Critical for preventing garbled text in Outlook and other clients -->
+    <!-- Ensures proper character encoding for different languages and symbols. Prevents rendering issues in email clients like Outlook -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- Allows fluid scaling on phones and tablets -->
+    <!-- Allows responsive scaling on mobile devices and tablets for a better viewing experience -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Prevents IE from entering compatibility mode -->
+    <!-- Forces modern rendering mode in Internet Explorer, preventing compatibility issues with older versions -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <style type="text/css">
         /* CLIENT-SPECIFIC STYLES */
@@ -14,12 +14,12 @@
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; }
 
-        /* RESET STYLES */
+        /* RESET STYLES to normalize defaults for consistent appearance across email clients */
         img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
         table { border-collapse: collapse !important; }
         body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
 
-        /* iOS BLUE LINKS */
+        /* iOS blue links fix: Overrides default link styling in iOS mail clients to avoid color changes */
         a[x-apple-data-detectors] {
             color: inherit !important;
             text-decoration: none !important;
@@ -29,7 +29,7 @@
             line-height: inherit !important;
         }
 
-        /* GMAIL BLUE LINKS */
+        /* Gmail-specific fix to prevent blue link styling on Gmail app */
         u + #body a {
             color: inherit;
             text-decoration: none;
@@ -39,7 +39,7 @@
             line-height: inherit;
         }
 
-        /* SAMSUNG MAIL BLUE LINKS */
+        /* Samsung Mail blue link fix: Prevents unwanted blue links on Samsung mobile mail apps */
         #MessageViewBody a {
             color: inherit;
             text-decoration: none;
@@ -52,95 +52,93 @@
         /* RESPONSIVE STYLES */
         @media screen and (max-width: 600px) {
             .two-column td, .three-column td {
-                display: block !important;
-                width: 100% !important;
-                padding: 10px 0 !important;
+                display: block !important; /* Stacks columns vertically on mobile devices */
+                width: 100% !important; /* Ensures full width for mobile */
+                padding: 10px 0 !important; /* Adds spacing between elements */
             }
-            .hidden-section { display: none !important; }
+            .hidden-section { display: none !important; } /* Hides additional details by default on smaller screens */
         }
 
         /* BUTTON ANIMATION */
         @keyframes colorShift {
-            0% { background-color: #C8102E; }
-            50% { background-color: #b71c1c; }
-            100% { background-color: #C8102E; }
+            0% { background-color: #C8102E; } /* Red color at the start */
+            50% { background-color: #b71c1c; } /* Darker red at the halfway point */
+            100% { background-color: #C8102E; } /* Returns to the original red color */
         }
 
-        /* INTERACTIVITY */
-        a.button:hover { background-color: #b71c1c !important; }
-        a.link:hover { text-decoration: underline !important; color: #D9D9D6 !important; }
+        /* INTERACTIVITY STYLES */
+        a.button:hover { background-color: #b71c1c !important; } /* Changes background color on hover */
+        a.link:hover { text-decoration: underline !important; color: #D9D9D6 !important; } /* Underlines links and changes color on hover */
 
         /* CHECKBOX TECHNIQUE */
-        input[type="radio"] { display: none; }
-        #show-details-label { display: block; }
-        #hide-details-label { display: none; }
-        input[type="radio"]#show-details:checked + label + .hidden-section { display: block !important; }
-        input[type="radio"]#show-details:checked + label { display: none; }
-        input[type="radio"]#show-details:checked ~ #hide-details-label { display: block; }
-        .hidden-section { display: none; }
-
-        /* ARROW STYLING */
+        input[type="radio"] { display: none; } /* Hides the radio buttons */
+        #show-details-label { display: block; } /* Displays the 'Show Event Details' label */
+        #hide-details-label { display: none; } /* Hides the 'Hide Event Details' label */
+        input[type="radio"]#show-details:checked + label + .hidden-section { display: block !important; } /* Shows additional content when the checkbox is checked */
+        input[type="radio"]#show-details:checked + label { display: none; } /* Hides the 'Show' label when the section is expanded */
+        input[type="radio"]#show-details:checked ~ #hide-details-label { display: block; } /* Shows the 'Hide' label when the section is expanded */
+        .hidden-section { display: none; } /* Hides additional sections by default */
+        
+        /* Arrow styling for collapsible details */
         .arrow { font-size: 16px; margin-left: 5px; }
     </style>
 </head>
 <body id="body" style="margin: 0 !important; padding: 0 !important; background-color: #f4f4f4; font-family: Arial, sans-serif;">
-<!-- Main table container -->
-<!-- Full-width wrapper ensures centered content even in wide screens -->
+<!-- Main container table for overall layout -->
 <table role="presentation" width="100%" style="background-color: #f4f4f4;">
     <tr>
         <td align="center">
-            <!-- Fixed 600px inner table matches most inbox widths -->
+            <!-- Inner table with fixed width for proper centering across devices -->
             <table role="presentation" width="600" style="background-color: #ffffff; margin: 20px auto;">
-                <!-- Logo image -->
+                <!-- CSUN Logo -->
                 <tr>
                     <td style="text-align: center; padding: 10px 0;">
-                        <!-- Official CSUN logo scaled to fit branding guidelines -->
+                        <!-- Scaled CSUN logo fits well within the newsletter branding -->
                         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/CSUNS.svg/1200px-CSUNS.svg.png" alt="CSUN Logo" style="max-width: 186px; height: auto;">
                     </td>
                 </tr>
 
-                <!-- Headline -->
+                <!-- Newsletter Headline -->
                 <tr>
                     <td style="text-align: center; padding: 20px 0;">
-                        <h1 style="font-size: 26px; color: #333333; margin: 0;">Discover CSUN Campus Life!</h1>
+                        <h1 style="font-size: 26px; color: #333333; margin: 0;">Discover CSUN Campus Life!</h1> <!-- Call to action headline -->
                     </td>
                 </tr>
 
-                <!-- Hero Image -->
+                <!-- Hero Image Section -->
                 <tr>
                     <td style="text-align: center; padding: 10px 0;">
-                        <!-- Local image path — use absolute URL in real campaigns -->
+                        <!-- Placeholder for a campus image, use a valid path for production -->
                         <img src="images/Screenshot4.jpg" alt="CSUN Campus" style="max-width: 100%; height: auto;">
                     </td>
                 </tr>
 
-                <!-- Two-Column Component -->
+                <!-- Two-Column Component (Campus Events and Student Clubs) -->
                 <tr>
-                    <!-- CSUN red background creates strong visual section -->
-                    <td style="padding: 20px; background-color: #C8102E;">
+                    <td style="padding: 20px; background-color: #C8102E;"> <!-- Eye-catching CSUN red background for key section -->
                         <table role="presentation" width="100%">
                             <tr class="two-column">
                                 <td style="width: 50%; padding: 0 10px; vertical-align: top; text-align: center;">
-                                    <h2 style="font-size: 22px; color: #FFFFFF; margin-top: 0;">Campus Events</h2>
+                                    <h2 style="font-size: 22px; color: #FFFFFF; margin-top: 0;">Campus Events</h2> <!-- Heading for left column -->
                                     <p style="font-size: 16px; color: #FFFFFF; line-height: 1.5;">
                                         Join us for the CSUN Fall Festival on October 15, featuring live music, food trucks, and student performances at the University Student Union.
                                     </p>
                                 </td>
                                 <td style="width: 50%; padding: 0 10px; vertical-align: top; text-align: center;">
-                                    <h2 style="font-size: 22px; color: #FFFFFF; margin-top: 0;">Student Clubs</h2>
+                                    <h2 style="font-size: 22px; color: #FFFFFF; margin-top: 0;">Student Clubs</h2> <!-- Heading for right column -->
                                     <p style="font-size: 16px; color: #FFFFFF; line-height: 1.5;">
                                         Explore over 300 student organizations, from the Computer Science Club to the CSUN Salsa Club, and find your community.
                                     </p>
                                 </td>
-                            </tr>
+                            </tr>    
                         </table>
                     </td>
                 </tr>
 
-                <!-- Three-Column Component with Background Image -->
+                <!-- Three-Column Section with a Background Image -->
                 <tr>
-                    <!-- Hero background from CSUN site; VML fallback needed for Outlook -->
                     <td style="padding: 20px; background-image: url('https://www.csun.edu/sites/default/files/field/image/oviatthero.jpg'); background-size: cover; background-position: center;">
+                        <!-- Background image enhances the visual appeal of the section, specific for each category -->
                         <table role="presentation" width="100%">
                             <tr class="three-column">
                                 <td style="width: 33.33%; padding: 0 10px; vertical-align: top; text-align: center; background-color: #C8102E;">
@@ -151,6 +149,7 @@
                                 </td>
                                 <td style="width: 33.33%; padding: 0 10px; vertical-align: top; text-align: center; background-color: #C8102E;">
                                     <h3 style="font-size: 18px; color: #FFFFFF; margin-top: 0;">Oviatt Library</h3>
+                                    <p style="font-size: 14px; color: #FFFFFF; line-height: 
                                     <p style="font-size: 14px; color: #FFFFFF; line-height: 1.5;">
                                         Study in the newly renovated Oviatt Library with 24/7 access during finals.
                                     </p>
@@ -166,37 +165,38 @@
                     </td>
                 </tr>
 
-                <!-- Buttons with Animation -->
+                <!-- Call to Action Buttons with Animation -->
                 <tr>
-                    <!-- Keyframes create subtle pulsing effect on hover and load -->
+                    <!-- Buttons use animation for an engaging hover effect, encouraging clicks -->
                     <td style="text-align: center; padding: 20px;">
                         <a href="https://www.csun.edu/usu/events" class="button" style="background-color: #C8102E; color: #FFFFFF; padding: 15px 30px; margin: 10px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block; animation: colorShift 3s infinite;">View Campus Events</a>
                         <a href="https://www.csun.edu/studentaffairs" class="button" style="background-color: #333333; color: #FFFFFF; padding: 15px 30px; margin: 10px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block; animation: colorShift 3s infinite;">Join a Club</a>
                     </td>
                 </tr>
 
-                <!-- Checkbox Technique with Radio Buttons -->
+                <!-- Checkbox Toggle for Extra Details (CSS-only toggle) -->
                 <tr>
-                    <!-- Pure CSS toggle using :checked and sibling selectors (no JS needed) -->
+                    <!-- CSS-only technique to toggle the visibility of event details -->
                     <td style="text-align: center; padding: 20px; background-color: #C8102E;">
-                        <input type="radio" id="show-details" name="toggle">
-                        <label id="show-details-label" for="show-details" style="font-size: 16px; color: #FFFFFF; cursor: pointer;">Show Event Details <span class="arrow">&gt;</span></label>
+                        <input type="radio" id="show-details" name="toggle"> <!-- Radio button to show details -->
+                        <label id="show-details-label" for="show-details" style="font-size: 16px; color: #FFFFFF; cursor: pointer;">Show Event Details <span class="arrow">&gt;</span></label> <!-- Label to toggle visibility -->
                         <div class="hidden-section" style="padding: 10px; background-color: #D9D9D6;">
+                            <!-- Hidden event details that appear when toggled on -->
                             <p style="font-size: 14px; color: #333333; margin: 0; text-align: center;">
                                 Fall Festival: October 15, 4–8 PM, USU Plaza. <a href="https://www.csun.edu/usu/events" class="link" style="color: #C8102E; text-decoration: none;">Learn More</a>
                             </p>
                         </div>
-                        <input type="radio" id="hide-details" name="toggle">
-                        <label id="hide-details-label" for="hide-details" style="font-size: 16px; color: #FFFFFF; cursor: pointer;">Hide Event Details <span class="arrow">&gt;</span></label>
+                        <input type="radio" id="hide-details" name="toggle"> <!-- Another radio button to hide details -->
+                        <label id="hide-details-label" for="hide-details" style="font-size: 16px; color: #FFFFFF; cursor: pointer;">Hide Event Details <span class="arrow">&gt;</span></label> <!-- Label to hide details -->
                     </td>
                 </tr>
 
-                <!-- Footer -->
+                <!-- Footer with Legal Information and Unsubscribe Link -->
                 <tr>
-                    <!-- Small text meets legal footer requirements -->
+                    <!-- Footer content with necessary legal and contact info, plus unsubscribe link -->
                     <td style="text-align: center; padding: 20px; font-size: 12px; color: #777777;">
-                        <p>Created for HW4, October 2025</p>
-                        <p><a href="#" style="color: #777777; text-decoration: underline;">Unsubscribe</a> | CSUN, 18111 Nordhoff St, Northridge, CA 91330</p>
+                        <p>Created for HW4, October 2025</p> <!-- Basic footer with a note for the assignment -->
+                        <p><a href="#" style="color: #777777; text-decoration: underline;">Unsubscribe</a> | CSUN, 18111 Nordhoff St, Northridge, CA 91330</p> <!-- Unsubscribe link for compliance -->
                     </td>
                 </tr>
             </table>
@@ -205,5 +205,3 @@
 </table>
 </body>
 </html>
-
-
