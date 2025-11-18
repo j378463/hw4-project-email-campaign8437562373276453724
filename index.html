@@ -11,8 +11,8 @@
     <style type="text/css">
         /* CLIENT-SPECIFIC STYLES */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-        img { -ms-interpolation-mode: bicubic; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; } /* Outlook spacing fix */
+        img { -ms-interpolation-mode: bicubic; } /* Smooth image scaling in Microsoft clients */
 
         /* RESET STYLES to normalize defaults for consistent appearance across email clients */
         img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
@@ -205,3 +205,4 @@
 </table>
 </body>
 </html>
+
