@@ -13,12 +13,10 @@
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; } /* Outlook spacing fix */
         img { -ms-interpolation-mode: bicubic; } /* Smooth image scaling in Microsoft clients */
-
         /* RESET STYLES to normalize defaults for consistent appearance across email clients */
         img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
         table { border-collapse: collapse !important; }
         body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
-
         /* iOS blue links fix: Overrides default link styling in iOS mail clients to avoid color changes */
         a[x-apple-data-detectors] {
             color: inherit !important;
@@ -28,7 +26,6 @@
             font-weight: inherit !important;
             line-height: inherit !important;
         }
-
         /* Gmail-specific fix to prevent blue link styling on Gmail app */
         u + #body a {
             color: inherit;
@@ -38,7 +35,6 @@
             font-weight: inherit;
             line-height: inherit;
         }
-
         /* Samsung Mail blue link fix: Prevents unwanted blue links on Samsung mobile mail apps */
         #MessageViewBody a {
             color: inherit;
@@ -48,7 +44,6 @@
             font-weight: inherit;
             line-height: inherit;
         }
-
         /* RESPONSIVE STYLES */
         @media screen and (max-width: 600px) {
             .two-column td, .three-column td {
@@ -58,27 +53,42 @@
             }
             .hidden-section { display: none !important; } /* Hides additional details by default on smaller screens */
         }
-
         /* BUTTON ANIMATION */
         @keyframes colorShift {
             0% { background-color: #C8102E; } /* Red color at the start */
             50% { background-color: #b71c1c; } /* Darker red at the halfway point */
             100% { background-color: #C8102E; } /* Returns to the original red color */
         }
-
         /* INTERACTIVITY STYLES */
         a.button:hover { background-color: #b71c1c !important; } /* Changes background color on hover */
         a.link:hover { text-decoration: underline !important; color: #D9D9D6 !important; } /* Underlines links and changes color on hover */
-
-        /* CHECKBOX TECHNIQUE */
-        input[type="radio"] { display: none; } /* Hides the radio buttons */
-        #show-details-label { display: block; } /* Displays the 'Show Event Details' label */
-        #hide-details-label { display: none; } /* Hides the 'Hide Event Details' label */
-        input[type="radio"]#show-details:checked + label + .hidden-section { display: block !important; } /* Shows additional content when the checkbox is checked */
-        input[type="radio"]#show-details:checked + label { display: none; } /* Hides the 'Show' label when the section is expanded */
-        input[type="radio"]#show-details:checked ~ #hide-details-label { display: block; } /* Shows the 'Hide' label when the section is expanded */
-        .hidden-section { display: none; } /* Hides additional sections by default */
-        
+        /* CHECKBOX TECHNIQUE (Fixed) */
+        input[type="checkbox"] { 
+            position: absolute; 
+            opacity: 0; 
+            width: 0; 
+            height: 0; 
+        }
+        .toggle-label {
+            display: block;
+            font-size: 16px; 
+            color: #FFFFFF; 
+            cursor: pointer;
+        }
+        .hidden-section { 
+            display: none !important; 
+            padding: 10px; 
+            background-color: #D9D9D6;
+        }
+        input[type="checkbox"]:checked ~ .hidden-section {
+            display: block !important;
+        }
+        input[type="checkbox"]:checked + .show-label {
+            display: none !important;
+        }
+        input[type="checkbox"]:not(:checked) ~ .hide-label {
+            display: none !important;
+        }
         /* Arrow styling for collapsible details */
         .arrow { font-size: 16px; margin-left: 5px; }
     </style>
@@ -97,21 +107,18 @@
                         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/CSUNS.svg/1200px-CSUNS.svg.png" alt="CSUN Logo" style="max-width: 186px; height: auto;">
                     </td>
                 </tr>
-
                 <!-- Newsletter Headline -->
                 <tr>
                     <td style="text-align: center; padding: 20px 0;">
                         <h1 style="font-size: 26px; color: #333333; margin: 0;">Discover CSUN Campus Life!</h1> <!-- Call to action headline -->
                     </td>
                 </tr>
-
                 <!-- Hero Image Section -->
                 <tr>
                     <td style="text-align: center; padding: 10px 0;">
                         <img src="images/Screenshot4.jpg" alt="CSUN Campus" style="max-width: 100%; height: auto;">
                     </td>
                 </tr>
-
                 <!-- Two-Column Component (Campus Events and Student Clubs) -->
                 <tr>
                     <td style="padding: 20px; background-color: #C8102E;"> <!-- Eye-catching CSUN red background for key section -->
@@ -129,11 +136,10 @@
                                         Explore over 300 student organizations, from the Computer Science Club to the CSUN Salsa Club, and find your community.
                                     </p>
                                 </td>
-                            </tr>    
+                            </tr>
                         </table>
                     </td>
                 </tr>
-
                 <!-- Three-Column Section with a Background Image -->
                 <tr>
                     <td style="padding: 20px; background-image: url('https://www.csun.edu/sites/default/files/field/image/oviatthero.jpg'); background-size: cover; background-position: center;">
@@ -148,7 +154,6 @@
                                 </td>
                                 <td style="width: 33.33%; padding: 0 10px; vertical-align: top; text-align: center; background-color: #C8102E;">
                                     <h3 style="font-size: 18px; color: #FFFFFF; margin-top: 0;">Oviatt Library</h3>
-                                    <p style="font-size: 14px; color: #FFFFFF; line-height: 
                                     <p style="font-size: 14px; color: #FFFFFF; line-height: 1.5;">
                                         Study in the newly renovated Oviatt Library with 24/7 access during finals.
                                     </p>
@@ -163,7 +168,6 @@
                         </table>
                     </td>
                 </tr>
-
                 <!-- Call to Action Buttons with Animation -->
                 <tr>
                     <!-- Buttons use animation for an engaging hover effect, encouraging clicks -->
@@ -172,24 +176,20 @@
                         <a href="https://www.csun.edu/studentaffairs" class="button" style="background-color: #333333; color: #FFFFFF; padding: 15px 30px; margin: 10px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block; animation: colorShift 3s infinite;">Join a Club</a>
                     </td>
                 </tr>
-
-                <!-- Checkbox Toggle for Extra Details (CSS-only toggle) -->
+                <!-- Checkbox Toggle for Extra Details (CSS-only toggle - Fixed) -->
                 <tr>
-                    <!-- CSS-only technique to toggle the visibility of event details -->
                     <td style="text-align: center; padding: 20px; background-color: #C8102E;">
-                        <input type="radio" id="show-details" name="toggle"> <!-- Radio button to show details -->
-                        <label id="show-details-label" for="show-details" style="font-size: 16px; color: #FFFFFF; cursor: pointer;">Show Event Details <span class="arrow">&gt;</span></label> <!-- Label to toggle visibility -->
-                        <div class="hidden-section" style="padding: 10px; background-color: #D9D9D6;">
+                        <input type="checkbox" id="toggle-details">
+                        <label for="toggle-details" class="toggle-label show-label">Show Event Details <span class="arrow">&gt;</span></label>
+                        <div class="hidden-section">
                             <!-- Hidden event details that appear when toggled on -->
                             <p style="font-size: 14px; color: #333333; margin: 0; text-align: center;">
                                 Fall Festival: October 15, 4–8 PM, USU Plaza. <a href="https://www.csun.edu/usu/events" class="link" style="color: #C8102E; text-decoration: none;">Learn More</a>
                             </p>
                         </div>
-                        <input type="radio" id="hide-details" name="toggle"> <!-- Another radio button to hide details -->
-                        <label id="hide-details-label" for="hide-details" style="font-size: 16px; color: #FFFFFF; cursor: pointer;">Hide Event Details <span class="arrow">&gt;</span></label> <!-- Label to hide details -->
+                        <label for="toggle-details" class="toggle-label hide-label">Hide Event Details <span class="arrow">&gt;</span></label>
                     </td>
                 </tr>
-
                 <!-- Footer with Legal Information and Unsubscribe Link -->
                 <tr>
                     <!-- Footer content with necessary legal and contact info, plus unsubscribe link -->
@@ -204,6 +204,3 @@
 </table>
 </body>
 </html>
-
-
-
